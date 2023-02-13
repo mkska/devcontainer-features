@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 PACKAGES=${PACKAGES:-""}
-UPGRADE_PACKAGES=${UPGRADEPACKAGES:-"false"}
 
-NPM_PACKAGES=("${PACKAGES//,/ }")
+NPM_PACKAGES=("${PACKAGES/,/ / }")
 
 set -e
 
