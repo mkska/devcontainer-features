@@ -2,7 +2,7 @@
 
 PACKAGES=${PACKAGES:-""}
 
-NPM_PACKAGES=("${PACKAGES/,/ / }")
+NPM_PACKAGES=("${PACKAGES//,/ }")
 
 set -e
 
