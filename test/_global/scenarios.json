@@ -1,12 +1,15 @@
 {
-    "color_and_hello": {
+    "all-features": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "color": {
-                "favorite": "purple"
+            "npm-packages": {
+                "packages": [
+                    "typescript",
+                    "is-number"
+                ]
             },
-            "hello": {
-                "greeting": "Greetings"
+            "cloud-sql-proxy": {
+                "version": "2.0.0"
             }
         }
     }
