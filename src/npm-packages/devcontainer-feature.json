@@ -1,22 +1,21 @@
 {
-    "name": "Hello, World!",
-    "id": "hello",
-    "version": "1.0.2",
-    "description": "A hello world feature",
+    "name": "npm packages",
+    "id": "npm-packages",
+    "version": "1.0.0",
+    "description": "Installs an npm packages.",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node:latest"
+    ],
     "options": {
-        "greeting": {
+        "packages": {
             "type": "string",
             "proposals": [
-                "hey",
-                "hello",
-                "hi",
-                "howdy"
+                "typescript",
+                "vtop",
+                "fkill-cli"
             ],
-            "default": "hey",
-            "description": "Select a pre-made greeting, or enter your own"
+            "default": "",
+            "description": "Select the npm packages to install."
         }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
-    ]
+    }
 }
