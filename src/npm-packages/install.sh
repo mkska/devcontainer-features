@@ -3,7 +3,7 @@
 PACKAGES=${PACKAGES:-""}
 UPGRADE_PACKAGES=${UPGRADEPACKAGES:-"false"}
 
-APT_PACKAGES=("${PACKAGES//,/ }")
+NPM_PACKAGES=("${PACKAGES//,/ }")
 
 set -e
 
@@ -46,6 +46,6 @@ install_via_npm() {
     npm install -g --omit=dev "$@"
 }
 
-install_via_npm ${PACKAGES[*]}
+install_via_npm ${NPM_PACKAGES[*]}
 
 echo "Done!"
