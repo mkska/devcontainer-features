@@ -1,0 +1,20 @@
+{
+    "name": "CloudSQL Proxy",
+    "id": "cloud-sql-proxy",
+    "version": "1.0.0",
+    "description": "Installs cloud-sql-proxy.",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ],
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "v2.0.0",
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Select version of cloud-sql-proxy to install."
+        }
+    }
+}
