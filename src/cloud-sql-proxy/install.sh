@@ -56,23 +56,22 @@ i?86) architecture="386" ;;
 esac
 
 if [ "${VERSION}" != "none" ]; then
-    binaryname="cloud-sql-proxy"
-
-    if [ "${VERSION::1}" != 'v' ]; then
-        VERSION="v${VERSION}"
+    if [ "${VERSION::1}" == 'v' ]; then
+        VERSION="${VERSION:1}"
     fi
+    binaryname="cloud-sql-proxy"
+    url="https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${VERSION}/${binaryname}.linux.${architecture}"
 
-    if [ "${VERSION::2}" == '1' ]; then
-        BINNAME="cloud_sql_proxy"
+    find_version_from_git_tags VERSION https://github.com/GoogleCloudPlatform/cloud-sql-proxy
+
+    if [ "${VERSION::1}" == '1' ]; then
+        binaryname="cloud_sql_proxy"
+        url="https://storage.googleapis.com/cloudsql-proxy/v${VERSION}/${binaryname}.linux.${architecture}"
     fi
 
     echo "Downloading ${binaryname}..."
 
-    find_version_from_git_tags VERSION https://github.com/GoogleCloudPlatform/cloud-sql-proxy
-
-
-
-    curl -sSL -o /usr/local/bin/cloud_sql_proxy "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/${VERSION}/${binaryname}.linux.${architecture}"
+    curl -sSL -o /usr/local/bin/cloud_sql_proxy $url
     chmod 0755 /usr/local/bin/cloud_sql_proxy
 fi
 
