@@ -19,8 +19,6 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
 check "check cloud-sql-proxy is installed" bash -c "cloud_sql_proxy --version"
-check "check typescript is installed" bash -c "npm list --global --parseable --depth 0 --omit dev | grep typescript"
-check "check is-number is installed" bash -c "npm list --global --parseable --depth 0 --omit dev | grep is-number"
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

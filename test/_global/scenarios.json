@@ -12,5 +12,13 @@
                 "version": "2.0.0"
             }
         }
+    },
+    "old-cloud-sql": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "cloud-sql-proxy": {
+                "version": "1.33.4"
+            }
+        }
     }
 }
