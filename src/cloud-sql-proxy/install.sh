@@ -62,15 +62,13 @@ if [ "${VERSION}" != "none" ]; then
         VERSION="v${VERSION}"
     fi
 
+    find_version_from_git_tags VERSION https://github.com/GoogleCloudPlatform/cloud-sql-proxy
+
     if [ "${VERSION::2}" == '1' ]; then
         BINNAME="cloud_sql_proxy"
     fi
 
     echo "Downloading ${binaryname}..."
-
-    find_version_from_git_tags VERSION https://github.com/GoogleCloudPlatform/cloud-sql-proxy
-
-
 
     curl -sSL -o /usr/local/bin/cloud_sql_proxy "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/${VERSION}/${binaryname}.linux.${architecture}"
     chmod 0755 /usr/local/bin/cloud_sql_proxy
