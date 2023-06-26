@@ -42,7 +42,7 @@ install_via_npm() {
         [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
     fi
 
-    npm install -g --omit=dev "$@"
+    npm install -g --omit=dev --unsafe-perm "$@"
 }
 
 install_via_npm ${NPM_PACKAGES[*]}
