@@ -1,7 +1,7 @@
 {
     "name": "npm packages",
     "id": "npm-packages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Installs an npm packages.",
     "installsAfter": [
         "ghcr.io/devcontainers/features/node:latest"
